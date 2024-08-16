@@ -2,15 +2,12 @@
 
 A new Flutter project.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Spek :
+Windows 10 
+Flutter version 3.22.3 
+Dart version 3.4.4
+DevTools version 2.34.3
+Android Studio 2024.1.1 Patch 1
+SDK version 35.0.0
+VS Code 1.92.1
+Flutter extention version 3.94.0
