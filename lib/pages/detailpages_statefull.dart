@@ -1,14 +1,10 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:lagu_daerah/models/province.dart';
 
-/*
-Penerapan StatefulWidget Anda saat ini dapat digantikan dengan StatelessWidget 
-karena tidak ada state yang dikelola baik itu dari segi data maupun widget. 
-Anda bisa menggantinya dengan menggunakan StatelessWidget agar dapat menghemat memori.
-
-*/
-
-class DetailPages extends StatelessWidget {
+class DetailPages extends StatefulWidget {
+  //properti variabel penampung data models
+  //membuat object
   final Province province;
 
   //constructor
@@ -18,8 +14,30 @@ class DetailPages extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<DetailPages> createState() => _DetailPagesState();
+}
+
+class _DetailPagesState extends State<DetailPages> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
+      /*
+      //-- appBar
+      appBar: AppBar(
+        //representasikan = final Province province;
+        //tampilkan data dari model data dari variabel province
+        title: Text(
+          //textAlign: TextAlign.center,
+          widget.province.nama,
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.orange,
+      ),
+      */
+
       //-- body
       body: ListView(
         padding: const EdgeInsets.all(16),
@@ -29,8 +47,7 @@ class DetailPages extends StatelessWidget {
           ),
           Text(
             textAlign: TextAlign.center,
-            //widget.province.nama, -> kalau statefull
-            province.nama, //stateless langsung direct tanpa widget
+            widget.province.nama,
             style: const TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
@@ -59,7 +76,7 @@ class DetailPages extends StatelessWidget {
               ),
               Text(
                 textAlign: TextAlign.center,
-                province.laguDaerah,
+                widget.province.laguDaerah,
                 style: const TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
@@ -83,7 +100,7 @@ class DetailPages extends StatelessWidget {
             height: 4,
           ),
           Text(
-            province.ibuKota,
+            widget.province.ibuKota,
             textAlign: TextAlign.center,
             style: const TextStyle(fontSize: 16),
           ),
@@ -93,7 +110,7 @@ class DetailPages extends StatelessWidget {
 
           //-- gambar
           Image.network(
-            province.photo,
+            widget.province.photo,
             height: 300,
           ),
 
@@ -108,7 +125,7 @@ class DetailPages extends StatelessWidget {
                 color: Colors.grey,
                 borderRadius: BorderRadius.all(Radius.circular(10))),
             child: Text(
-              province.lirikLaguDaerah,
+              widget.province.lirikLaguDaerah,
               textAlign: TextAlign.center,
               style: const TextStyle(fontSize: 14),
             ),

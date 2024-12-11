@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:lagu_daerah/models/province.dart';
 import 'package:lagu_daerah/pages/detailpages.dart';
 
-/*
-Penerapan StatefulWidget Anda saat ini dapat digantikan dengan StatelessWidget 
-karena tidak ada state yang dikelola baik itu dari segi data maupun widget. 
-Anda bisa menggantinya dengan menggunakan StatelessWidget agar dapat menghemat memori.
-
-*/
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  //
   @override
   Widget build(BuildContext context) {
     return Container(
